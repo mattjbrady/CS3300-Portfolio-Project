@@ -1,7 +1,8 @@
 require "rails_helper"
 
+# Unit test for Controller portion of the Project MVC
 RSpec.describe ProjectsController, type: :controller do
-    # Test index 
+    # Test routing for index 
     context "GET #index" do
         # Test that controller can route to index
         it "returns a success response" do
@@ -12,7 +13,7 @@ RSpec.describe ProjectsController, type: :controller do
         end
     end
 
-    # Test individual projects
+    # Test routing for individual projects
     context "GET #show" do
         # Create a test project
         let!(:project) { Project.create(title: "Test title", description: "Test description") }
