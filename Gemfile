@@ -73,3 +73,6 @@ gem 'mini_racer'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
 end
+
+# Library to add users, authentication, and security
+gem 'devise'
