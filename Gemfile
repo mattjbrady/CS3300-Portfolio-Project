@@ -76,3 +76,8 @@ end
 
 # Library to add users, authentication, and security
 gem 'devise'
+
+# FactoryBot for feature/integration tests
+group :test do
+  gem 'factory_bot_rails'
+end
