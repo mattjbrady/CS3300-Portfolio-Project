@@ -38,10 +38,6 @@ RSpec.feature "Projects", type: :feature do
     # For each test of this feature, create a test project, access its editing page
     let(:project) { Project.create(title: "Test title", description: "Test content") }
 
-    # Log in
-    user = FactoryBot.create(:user)
-    login_as(user, :scope => :user)
-
     before(:each) do
       visit edit_project_path(project)
     end
