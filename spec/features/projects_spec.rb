@@ -4,8 +4,14 @@ require 'rails_helper'
 RSpec.feature "Projects", type: :feature do
   # Testing project creation
   context "Create new project" do
+        
     # For each test for this feature, create a test project to run
     before(:each) do
+      # Log in
+      user = FactoryBot.create(:user)
+      login_as(user, :scope => :user)
+
+      # Go to new project
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
@@ -31,6 +37,11 @@ RSpec.feature "Projects", type: :feature do
   context "Update project" do
     # For each test of this feature, create a test project, access its editing page
     let(:project) { Project.create(title: "Test title", description: "Test content") }
+
+    # Log in
+    user = FactoryBot.create(:user)
+    login_as(user, :scope => :user)
+
     before(:each) do
       visit edit_project_path(project)
     end

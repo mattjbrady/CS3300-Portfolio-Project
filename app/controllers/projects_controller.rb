@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
-  before_action :authenticate_user! #, only: %i[ new edit update destroy ]
+
+  # Only authenticated users can access theses options
+  before_action :authenticate_user!, only: %i[ new edit update destroy ]
 
   # GET /projects or /projects.json
   def index

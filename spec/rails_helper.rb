@@ -67,6 +67,9 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include FactoryBot::Syntax::Methods
   config.extend ControllerMacros, :type => :controller
+
+  # Devise sign-in test automation for feature testing
+  config.include Warden::Test::Helpers
 end
 
 # Add simplecov as a requirement to the RSpec resources
