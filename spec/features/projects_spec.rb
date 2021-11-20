@@ -39,6 +39,10 @@ RSpec.feature "Projects", type: :feature do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
 
     before(:each) do
+      # Log in
+      user = FactoryBot.create(:user)
+      login_as(user, :scope => :user)
+      
       visit edit_project_path(project)
     end
 
@@ -65,6 +69,13 @@ RSpec.feature "Projects", type: :feature do
   context "Remove existing project" do
     # Create a project
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
+
+    before(:each) do
+      # Log in
+      user = FactoryBot.create(:user)
+      login_as(user, :scope => :user)
+    end
+
     # Test that the project can be removed and confirms a succesful deletion, and that
     # there are no projects in the Model
     scenario "remove project" do
