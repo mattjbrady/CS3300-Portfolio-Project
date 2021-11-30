@@ -11,6 +11,13 @@ RSpec.describe User, type: :model do
     end
   end
 
+  context 'user registration' do 
+    it "can register a valid user" do 
+      user = build(:user) 
+      expect(user).to be_valid
+    end
+  end
+
   # Test that the multiple users can exist
   context "scopes tests" do
     # Create three users

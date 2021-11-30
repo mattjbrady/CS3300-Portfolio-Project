@@ -30,4 +30,12 @@ RSpec.describe ProjectsController, type: :controller do
             expect(response).to be_success
         end
     end
+
+    context "Users" do
+        login_user
+        it "shoule be logged in" do 
+            expect(subject.current_user).to_not eq(nil)
+        end
+    end
+
 end
