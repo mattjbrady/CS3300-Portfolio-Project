@@ -81,3 +81,9 @@ gem 'devise'
 group :test do
   gem 'factory_bot_rails'
 end
+
+# Dependencies for Bootstrap
+gem 'bootstrap', '~> 4.6.1'
+gem 'sassc' #, '~> 2.1.0' # bundle doesn't complete install if more recent version is used
+gem 'sprockets-rails', '>= 2.3.2'
+gem 'jquery-rails'
