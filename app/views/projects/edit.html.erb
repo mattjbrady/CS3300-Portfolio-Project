@@ -1,6 +1,13 @@
-<h1>Editing Project</h1>
+<div class="container">
+  <div class="page-header">
+    <h1>Edit Project</h1>
+    <h5><span class="label label-danger">Edit your project </span></h5>
+  </div>
+</div>
 
-<%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<div class="container">
+    <%= render 'form', project: @project %>
+    <br>
+    <%= link_to 'Back', projects_path, class: 'btn btn-primary' %>
+    <%= link_to 'Show', @project, class: 'btn btn-info' %>
+</div>
