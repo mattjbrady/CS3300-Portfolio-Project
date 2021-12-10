@@ -2,8 +2,9 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>Projects</h1>
-    <h4><span class="label label-primary">Lorem ipsum </span></h4>
+    <h1>Matt's Portfolio</h1>
+    <h2>Projects</h2>
+    <h4><span class="label label-primary"> Welcome to my portfolio! This showcases a selection of the projects I've worked on over the years. </span></h4>
   </div>
 </div>
 
@@ -23,9 +24,11 @@
         <td><%= project.title %></td>
         <td class="w-50"><%= project.description %></td>
         <td class = "text-left">
-          <%= link_to 'Show', project, class: 'btn btn-primary' %>
-          <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-success'  %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>
+          <%= link_to 'Show', project, class: 'btn btn-info' %>
+          <% if user_signed_in? %>
+          <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-secondary'  %>
+          <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -36,5 +39,7 @@
 <br>
 
 <div class="container">
+<% if user_signed_in? %>
 <%= link_to 'New Project', new_project_path, class: 'btn btn-success'  %>
+<% end %>
 </div>
